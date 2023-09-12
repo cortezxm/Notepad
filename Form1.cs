@@ -1,17 +1,22 @@
 namespace Notepad
 {
-    public partial class Form1 : Form
+    public partial class FormPrincipal : Form
     {
-        public Form1()
+        private bool cambiosRealizados = false;
+        public FormPrincipal()
         {
             InitializeComponent();
+            richTextBox1.TextChanged += RichTextBox1_TextChanged;
         }
 
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox1.Clear();
         }
-
+        private void RichTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            cambiosRealizados = true;
+        }
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -27,6 +32,7 @@ namespace Notepad
             if (!string.IsNullOrEmpty(this.Text))
             {
                 richTextBox1.SaveFile(this.Text, RichTextBoxStreamType.PlainText);
+                cambiosRealizados = false; // Restablece el indicador de cambios
             }
             else
             {
@@ -44,14 +50,33 @@ namespace Notepad
             {
                 richTextBox1.SaveFile(saveFileDialog.FileName, RichTextBoxStreamType.PlainText);
                 this.Text = saveFileDialog.FileName;
+                cambiosRealizados = false; //
             }
         }
 
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Close();
+            if (cambiosRealizados)
+            {
+                DialogResult result = MessageBox.Show("¿Desea guardar los cambios?", "Salir", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    guardarComoToolStripMenuItem_Click(sender, e);
+                    Close();
+                }
+                else if (result == DialogResult.No)
+                {
+                    Close();
+                }
+            }
+            else
+            {
+                Close();
+            }
         }
+
 
         private void deshacerToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -95,6 +120,18 @@ namespace Notepad
             ColorDialog fnt = new ColorDialog();
             if (fnt.ShowDialog() == DialogResult.OK)
                 richTextBox1.ForeColor = fnt.Color;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buscarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormBuscar buscarForm = new FormBuscar(richTextBox1); 
+            buscarForm.Show();
+            
         }
     }
 }
