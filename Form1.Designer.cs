@@ -68,17 +68,18 @@
             tlsbColor = new ToolStripButton();
             toolStripSeparator3 = new ToolStripSeparator();
             tlsbExit = new ToolStripButton();
+            panel1 = new Panel();
             menuStrip1.SuspendLayout();
             toolStrip1.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // richTextBox1
             // 
-            richTextBox1.Dock = DockStyle.Fill;
-            richTextBox1.Location = new Point(0, 30);
-            richTextBox1.Margin = new Padding(3, 4, 3, 4);
+            richTextBox1.Dock = DockStyle.Bottom;
+            richTextBox1.Location = new Point(0, 61);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(1016, 541);
+            richTextBox1.Size = new Size(889, 367);
             richTextBox1.TabIndex = 0;
             richTextBox1.Text = "";
             richTextBox1.TextChanged += richTextBox1_TextChanged_1;
@@ -89,8 +90,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { archivoToolStripMenuItem, editarToolStripMenuItem, formatToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(7, 3, 0, 3);
-            menuStrip1.Size = new Size(1016, 30);
+            menuStrip1.Size = new Size(889, 28);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -99,14 +99,14 @@
             archivoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { nuevoToolStripMenuItem, openToolStripMenuItem, guardarComoToolStripMenuItem, guardarToolStripMenuItem, salirToolStripMenuItem });
             archivoToolStripMenuItem.Image = (Image)resources.GetObject("archivoToolStripMenuItem.Image");
             archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            archivoToolStripMenuItem.Size = new Size(93, 24);
+            archivoToolStripMenuItem.Size = new Size(80, 24);
             archivoToolStripMenuItem.Text = "Archivo";
             // 
             // nuevoToolStripMenuItem
             // 
             nuevoToolStripMenuItem.Image = (Image)resources.GetObject("nuevoToolStripMenuItem.Image");
             nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            nuevoToolStripMenuItem.Size = new Size(187, 26);
+            nuevoToolStripMenuItem.Size = new Size(150, 22);
             nuevoToolStripMenuItem.Text = "Nuevo";
             nuevoToolStripMenuItem.Click += nuevoToolStripMenuItem_Click;
             // 
@@ -114,7 +114,7 @@
             // 
             openToolStripMenuItem.Image = (Image)resources.GetObject("openToolStripMenuItem.Image");
             openToolStripMenuItem.Name = "openToolStripMenuItem";
-            openToolStripMenuItem.Size = new Size(187, 26);
+            openToolStripMenuItem.Size = new Size(150, 22);
             openToolStripMenuItem.Text = "Abrir";
             openToolStripMenuItem.Click += openToolStripMenuItem_Click;
             // 
@@ -122,7 +122,7 @@
             // 
             guardarComoToolStripMenuItem.Image = (Image)resources.GetObject("guardarComoToolStripMenuItem.Image");
             guardarComoToolStripMenuItem.Name = "guardarComoToolStripMenuItem";
-            guardarComoToolStripMenuItem.Size = new Size(187, 26);
+            guardarComoToolStripMenuItem.Size = new Size(150, 22);
             guardarComoToolStripMenuItem.Text = "Guardar";
             guardarComoToolStripMenuItem.Click += guardarComoToolStripMenuItem_Click;
             // 
@@ -130,7 +130,7 @@
             // 
             guardarToolStripMenuItem.Image = (Image)resources.GetObject("guardarToolStripMenuItem.Image");
             guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            guardarToolStripMenuItem.Size = new Size(187, 26);
+            guardarToolStripMenuItem.Size = new Size(150, 22);
             guardarToolStripMenuItem.Text = "Guardar como";
             guardarToolStripMenuItem.Click += guardarComoToolStripMenuItem_Click;
             // 
@@ -138,7 +138,7 @@
             // 
             salirToolStripMenuItem.Image = (Image)resources.GetObject("salirToolStripMenuItem.Image");
             salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new Size(187, 26);
+            salirToolStripMenuItem.Size = new Size(150, 22);
             salirToolStripMenuItem.Text = "Salir";
             salirToolStripMenuItem.Click += salirToolStripMenuItem_Click;
             // 
@@ -147,14 +147,14 @@
             editarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { deshacerToolStripMenuItem, rehacerToolStripMenuItem, toolStripMenuItem1, cortarToolStripMenuItem, copiarToolStripMenuItem, pegarToolStripMenuItem, toolStripMenuItem2, seleccionarTodoToolStripMenuItem, buscarToolStripMenuItem1 });
             editarToolStripMenuItem.Image = (Image)resources.GetObject("editarToolStripMenuItem.Image");
             editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            editarToolStripMenuItem.Size = new Size(82, 24);
+            editarToolStripMenuItem.Size = new Size(69, 24);
             editarToolStripMenuItem.Text = "Editar";
             // 
             // deshacerToolStripMenuItem
             // 
             deshacerToolStripMenuItem.Image = (Image)resources.GetObject("deshacerToolStripMenuItem.Image");
             deshacerToolStripMenuItem.Name = "deshacerToolStripMenuItem";
-            deshacerToolStripMenuItem.Size = new Size(204, 26);
+            deshacerToolStripMenuItem.Size = new Size(162, 22);
             deshacerToolStripMenuItem.Text = "Deshacer";
             deshacerToolStripMenuItem.Click += deshacerToolStripMenuItem_Click;
             // 
@@ -162,20 +162,20 @@
             // 
             rehacerToolStripMenuItem.Image = (Image)resources.GetObject("rehacerToolStripMenuItem.Image");
             rehacerToolStripMenuItem.Name = "rehacerToolStripMenuItem";
-            rehacerToolStripMenuItem.Size = new Size(204, 26);
+            rehacerToolStripMenuItem.Size = new Size(162, 22);
             rehacerToolStripMenuItem.Text = "Rehacer";
             rehacerToolStripMenuItem.Click += rehacerToolStripMenuItem_Click;
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(201, 6);
+            toolStripMenuItem1.Size = new Size(159, 6);
             // 
             // cortarToolStripMenuItem
             // 
             cortarToolStripMenuItem.Image = (Image)resources.GetObject("cortarToolStripMenuItem.Image");
             cortarToolStripMenuItem.Name = "cortarToolStripMenuItem";
-            cortarToolStripMenuItem.Size = new Size(204, 26);
+            cortarToolStripMenuItem.Size = new Size(162, 22);
             cortarToolStripMenuItem.Text = "Cortar";
             cortarToolStripMenuItem.Click += cortarToolStripMenuItem_Click;
             // 
@@ -183,7 +183,7 @@
             // 
             copiarToolStripMenuItem.Image = (Image)resources.GetObject("copiarToolStripMenuItem.Image");
             copiarToolStripMenuItem.Name = "copiarToolStripMenuItem";
-            copiarToolStripMenuItem.Size = new Size(204, 26);
+            copiarToolStripMenuItem.Size = new Size(162, 22);
             copiarToolStripMenuItem.Text = "Copiar";
             copiarToolStripMenuItem.Click += copiarToolStripMenuItem_Click;
             // 
@@ -191,20 +191,20 @@
             // 
             pegarToolStripMenuItem.Image = (Image)resources.GetObject("pegarToolStripMenuItem.Image");
             pegarToolStripMenuItem.Name = "pegarToolStripMenuItem";
-            pegarToolStripMenuItem.Size = new Size(204, 26);
+            pegarToolStripMenuItem.Size = new Size(162, 22);
             pegarToolStripMenuItem.Text = "Pegar";
             pegarToolStripMenuItem.Click += pegarToolStripMenuItem_Click;
             // 
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(201, 6);
+            toolStripMenuItem2.Size = new Size(159, 6);
             // 
             // seleccionarTodoToolStripMenuItem
             // 
             seleccionarTodoToolStripMenuItem.Image = (Image)resources.GetObject("seleccionarTodoToolStripMenuItem.Image");
             seleccionarTodoToolStripMenuItem.Name = "seleccionarTodoToolStripMenuItem";
-            seleccionarTodoToolStripMenuItem.Size = new Size(204, 26);
+            seleccionarTodoToolStripMenuItem.Size = new Size(162, 22);
             seleccionarTodoToolStripMenuItem.Text = "Seleccionar todo";
             seleccionarTodoToolStripMenuItem.Click += seleccionarTodoToolStripMenuItem_Click;
             // 
@@ -212,7 +212,7 @@
             // 
             buscarToolStripMenuItem1.Image = (Image)resources.GetObject("buscarToolStripMenuItem1.Image");
             buscarToolStripMenuItem1.Name = "buscarToolStripMenuItem1";
-            buscarToolStripMenuItem1.Size = new Size(204, 26);
+            buscarToolStripMenuItem1.Size = new Size(162, 22);
             buscarToolStripMenuItem1.Text = "Buscar";
             buscarToolStripMenuItem1.Click += buscarToolStripMenuItem1_Click;
             // 
@@ -221,14 +221,14 @@
             formatToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fuenteToolStripMenuItem, colorToolStripMenuItem });
             formatToolStripMenuItem.Image = (Image)resources.GetObject("formatToolStripMenuItem.Image");
             formatToolStripMenuItem.Name = "formatToolStripMenuItem";
-            formatToolStripMenuItem.Size = new Size(99, 24);
+            formatToolStripMenuItem.Size = new Size(84, 24);
             formatToolStripMenuItem.Text = "Formato";
             // 
             // fuenteToolStripMenuItem
             // 
             fuenteToolStripMenuItem.Image = (Image)resources.GetObject("fuenteToolStripMenuItem.Image");
             fuenteToolStripMenuItem.Name = "fuenteToolStripMenuItem";
-            fuenteToolStripMenuItem.Size = new Size(136, 26);
+            fuenteToolStripMenuItem.Size = new Size(184, 26);
             fuenteToolStripMenuItem.Text = "Fuente";
             fuenteToolStripMenuItem.Click += fuenteToolStripMenuItem_Click;
             // 
@@ -236,17 +236,18 @@
             // 
             colorToolStripMenuItem.Image = (Image)resources.GetObject("colorToolStripMenuItem.Image");
             colorToolStripMenuItem.Name = "colorToolStripMenuItem";
-            colorToolStripMenuItem.Size = new Size(136, 26);
+            colorToolStripMenuItem.Size = new Size(184, 26);
             colorToolStripMenuItem.Text = "Color";
             colorToolStripMenuItem.Click += colorToolStripMenuItem_Click;
             // 
             // toolStrip1
             // 
+            toolStrip1.Dock = DockStyle.None;
             toolStrip1.ImageScalingSize = new Size(20, 20);
             toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButton1, tlsbOpen, tlsbSave, tlsbSaveAs, toolStripSeparator1, tlsbAtras, tlsbRehacer, tlsbCut, tlsbCopy, tlsbPage, tlsbSub, tlsbSearch, toolStripSeparator2, tlsbFont, tlsbColor, toolStripSeparator3, tlsbExit });
-            toolStrip1.Location = new Point(0, 30);
+            toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(1016, 27);
+            toolStrip1.Size = new Size(366, 27);
             toolStrip1.TabIndex = 2;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -256,7 +257,7 @@
             toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
             toolStripButton1.ImageTransparentColor = Color.Magenta;
             toolStripButton1.Name = "toolStripButton1";
-            toolStripButton1.Size = new Size(29, 24);
+            toolStripButton1.Size = new Size(24, 24);
             toolStripButton1.Text = "toolStripButton1";
             toolStripButton1.Click += toolStripButton1_Click;
             // 
@@ -266,7 +267,7 @@
             tlsbOpen.Image = (Image)resources.GetObject("tlsbOpen.Image");
             tlsbOpen.ImageTransparentColor = Color.Magenta;
             tlsbOpen.Name = "tlsbOpen";
-            tlsbOpen.Size = new Size(29, 24);
+            tlsbOpen.Size = new Size(24, 24);
             tlsbOpen.Text = "tlsbOpen";
             tlsbOpen.Click += toolStripButton2_Click;
             // 
@@ -276,7 +277,7 @@
             tlsbSave.Image = (Image)resources.GetObject("tlsbSave.Image");
             tlsbSave.ImageTransparentColor = Color.Magenta;
             tlsbSave.Name = "tlsbSave";
-            tlsbSave.Size = new Size(29, 24);
+            tlsbSave.Size = new Size(24, 24);
             tlsbSave.Click += tlsbSave_Click;
             // 
             // tlsbSaveAs
@@ -285,7 +286,7 @@
             tlsbSaveAs.Image = (Image)resources.GetObject("tlsbSaveAs.Image");
             tlsbSaveAs.ImageTransparentColor = Color.Magenta;
             tlsbSaveAs.Name = "tlsbSaveAs";
-            tlsbSaveAs.Size = new Size(29, 24);
+            tlsbSaveAs.Size = new Size(24, 24);
             tlsbSaveAs.Click += tlsbSaveAs_Click;
             // 
             // toolStripSeparator1
@@ -299,7 +300,7 @@
             tlsbAtras.Image = (Image)resources.GetObject("tlsbAtras.Image");
             tlsbAtras.ImageTransparentColor = Color.Magenta;
             tlsbAtras.Name = "tlsbAtras";
-            tlsbAtras.Size = new Size(29, 24);
+            tlsbAtras.Size = new Size(24, 24);
             tlsbAtras.Click += toolStripButton5_Click;
             // 
             // tlsbRehacer
@@ -308,7 +309,7 @@
             tlsbRehacer.Image = (Image)resources.GetObject("tlsbRehacer.Image");
             tlsbRehacer.ImageTransparentColor = Color.Magenta;
             tlsbRehacer.Name = "tlsbRehacer";
-            tlsbRehacer.Size = new Size(29, 24);
+            tlsbRehacer.Size = new Size(24, 24);
             tlsbRehacer.Click += tlsbRehacer_Click;
             // 
             // tlsbCut
@@ -317,7 +318,7 @@
             tlsbCut.Image = (Image)resources.GetObject("tlsbCut.Image");
             tlsbCut.ImageTransparentColor = Color.Magenta;
             tlsbCut.Name = "tlsbCut";
-            tlsbCut.Size = new Size(29, 24);
+            tlsbCut.Size = new Size(24, 24);
             tlsbCut.Click += tlsbCut_Click;
             // 
             // tlsbCopy
@@ -326,7 +327,7 @@
             tlsbCopy.Image = (Image)resources.GetObject("tlsbCopy.Image");
             tlsbCopy.ImageTransparentColor = Color.Magenta;
             tlsbCopy.Name = "tlsbCopy";
-            tlsbCopy.Size = new Size(29, 24);
+            tlsbCopy.Size = new Size(24, 24);
             tlsbCopy.Click += tlsbCopy_Click;
             // 
             // tlsbPage
@@ -335,7 +336,7 @@
             tlsbPage.Image = (Image)resources.GetObject("tlsbPage.Image");
             tlsbPage.ImageTransparentColor = Color.Magenta;
             tlsbPage.Name = "tlsbPage";
-            tlsbPage.Size = new Size(29, 24);
+            tlsbPage.Size = new Size(24, 24);
             tlsbPage.Click += tlsbPage_Click;
             // 
             // tlsbSub
@@ -344,7 +345,7 @@
             tlsbSub.Image = (Image)resources.GetObject("tlsbSub.Image");
             tlsbSub.ImageTransparentColor = Color.Magenta;
             tlsbSub.Name = "tlsbSub";
-            tlsbSub.Size = new Size(29, 24);
+            tlsbSub.Size = new Size(24, 24);
             tlsbSub.Click += tlsbSub_Click;
             // 
             // tlsbSearch
@@ -353,7 +354,7 @@
             tlsbSearch.Image = (Image)resources.GetObject("tlsbSearch.Image");
             tlsbSearch.ImageTransparentColor = Color.Magenta;
             tlsbSearch.Name = "tlsbSearch";
-            tlsbSearch.Size = new Size(29, 24);
+            tlsbSearch.Size = new Size(24, 24);
             tlsbSearch.Click += tlsbSearch_Click;
             // 
             // toolStripSeparator2
@@ -367,7 +368,7 @@
             tlsbFont.Image = (Image)resources.GetObject("tlsbFont.Image");
             tlsbFont.ImageTransparentColor = Color.Magenta;
             tlsbFont.Name = "tlsbFont";
-            tlsbFont.Size = new Size(29, 24);
+            tlsbFont.Size = new Size(24, 24);
             tlsbFont.Click += tlsbFont_Click;
             // 
             // tlsbColor
@@ -376,7 +377,7 @@
             tlsbColor.Image = (Image)resources.GetObject("tlsbColor.Image");
             tlsbColor.ImageTransparentColor = Color.Magenta;
             tlsbColor.Name = "tlsbColor";
-            tlsbColor.Size = new Size(29, 24);
+            tlsbColor.Size = new Size(24, 24);
             tlsbColor.Click += tlsbColor_Click;
             // 
             // toolStripSeparator3
@@ -390,20 +391,27 @@
             tlsbExit.Image = (Image)resources.GetObject("tlsbExit.Image");
             tlsbExit.ImageTransparentColor = Color.Magenta;
             tlsbExit.Name = "tlsbExit";
-            tlsbExit.Size = new Size(29, 24);
+            tlsbExit.Size = new Size(24, 24);
             tlsbExit.Click += tlsbExit_Click;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(toolStrip1);
+            panel1.Location = new Point(0, 31);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(792, 25);
+            panel1.TabIndex = 3;
             // 
             // FormPrincipal
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1016, 571);
-            Controls.Add(toolStrip1);
+            ClientSize = new Size(889, 428);
+            Controls.Add(panel1);
             Controls.Add(richTextBox1);
             Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "FormPrincipal";
             RightToLeftLayout = true;
             Text = "Notes";
@@ -412,6 +420,8 @@
             menuStrip1.PerformLayout();
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -457,5 +467,6 @@
         private ToolStripButton tlsbColor;
         private ToolStripSeparator toolStripSeparator3;
         private ToolStripButton tlsbExit;
+        private Panel panel1;
     }
 }
