@@ -50,7 +50,26 @@
             formatToolStripMenuItem = new ToolStripMenuItem();
             fuenteToolStripMenuItem = new ToolStripMenuItem();
             colorToolStripMenuItem = new ToolStripMenuItem();
+            toolStrip1 = new ToolStrip();
+            toolStripButton1 = new ToolStripButton();
+            tlsbOpen = new ToolStripButton();
+            tlsbSave = new ToolStripButton();
+            tlsbSaveAs = new ToolStripButton();
+            toolStripSeparator1 = new ToolStripSeparator();
+            tlsbAtras = new ToolStripButton();
+            tlsbRehacer = new ToolStripButton();
+            tlsbCut = new ToolStripButton();
+            tlsbCopy = new ToolStripButton();
+            tlsbPage = new ToolStripButton();
+            tlsbSub = new ToolStripButton();
+            tlsbSearch = new ToolStripButton();
+            toolStripSeparator2 = new ToolStripSeparator();
+            tlsbFont = new ToolStripButton();
+            tlsbColor = new ToolStripButton();
+            toolStripSeparator3 = new ToolStripSeparator();
+            tlsbExit = new ToolStripButton();
             menuStrip1.SuspendLayout();
+            toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // richTextBox1
@@ -59,9 +78,10 @@
             richTextBox1.Location = new Point(0, 30);
             richTextBox1.Margin = new Padding(3, 4, 3, 4);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(914, 570);
+            richTextBox1.Size = new Size(1016, 541);
             richTextBox1.TabIndex = 0;
             richTextBox1.Text = "";
+            richTextBox1.TextChanged += richTextBox1_TextChanged_1;
             // 
             // menuStrip1
             // 
@@ -70,7 +90,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(7, 3, 0, 3);
-            menuStrip1.Size = new Size(914, 30);
+            menuStrip1.Size = new Size(1016, 30);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -134,7 +154,7 @@
             // 
             deshacerToolStripMenuItem.Image = (Image)resources.GetObject("deshacerToolStripMenuItem.Image");
             deshacerToolStripMenuItem.Name = "deshacerToolStripMenuItem";
-            deshacerToolStripMenuItem.Size = new Size(224, 26);
+            deshacerToolStripMenuItem.Size = new Size(204, 26);
             deshacerToolStripMenuItem.Text = "Deshacer";
             deshacerToolStripMenuItem.Click += deshacerToolStripMenuItem_Click;
             // 
@@ -142,20 +162,20 @@
             // 
             rehacerToolStripMenuItem.Image = (Image)resources.GetObject("rehacerToolStripMenuItem.Image");
             rehacerToolStripMenuItem.Name = "rehacerToolStripMenuItem";
-            rehacerToolStripMenuItem.Size = new Size(224, 26);
+            rehacerToolStripMenuItem.Size = new Size(204, 26);
             rehacerToolStripMenuItem.Text = "Rehacer";
             rehacerToolStripMenuItem.Click += rehacerToolStripMenuItem_Click;
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(221, 6);
+            toolStripMenuItem1.Size = new Size(201, 6);
             // 
             // cortarToolStripMenuItem
             // 
             cortarToolStripMenuItem.Image = (Image)resources.GetObject("cortarToolStripMenuItem.Image");
             cortarToolStripMenuItem.Name = "cortarToolStripMenuItem";
-            cortarToolStripMenuItem.Size = new Size(224, 26);
+            cortarToolStripMenuItem.Size = new Size(204, 26);
             cortarToolStripMenuItem.Text = "Cortar";
             cortarToolStripMenuItem.Click += cortarToolStripMenuItem_Click;
             // 
@@ -163,7 +183,7 @@
             // 
             copiarToolStripMenuItem.Image = (Image)resources.GetObject("copiarToolStripMenuItem.Image");
             copiarToolStripMenuItem.Name = "copiarToolStripMenuItem";
-            copiarToolStripMenuItem.Size = new Size(224, 26);
+            copiarToolStripMenuItem.Size = new Size(204, 26);
             copiarToolStripMenuItem.Text = "Copiar";
             copiarToolStripMenuItem.Click += copiarToolStripMenuItem_Click;
             // 
@@ -171,20 +191,20 @@
             // 
             pegarToolStripMenuItem.Image = (Image)resources.GetObject("pegarToolStripMenuItem.Image");
             pegarToolStripMenuItem.Name = "pegarToolStripMenuItem";
-            pegarToolStripMenuItem.Size = new Size(224, 26);
+            pegarToolStripMenuItem.Size = new Size(204, 26);
             pegarToolStripMenuItem.Text = "Pegar";
             pegarToolStripMenuItem.Click += pegarToolStripMenuItem_Click;
             // 
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(221, 6);
+            toolStripMenuItem2.Size = new Size(201, 6);
             // 
             // seleccionarTodoToolStripMenuItem
             // 
             seleccionarTodoToolStripMenuItem.Image = (Image)resources.GetObject("seleccionarTodoToolStripMenuItem.Image");
             seleccionarTodoToolStripMenuItem.Name = "seleccionarTodoToolStripMenuItem";
-            seleccionarTodoToolStripMenuItem.Size = new Size(224, 26);
+            seleccionarTodoToolStripMenuItem.Size = new Size(204, 26);
             seleccionarTodoToolStripMenuItem.Text = "Seleccionar todo";
             seleccionarTodoToolStripMenuItem.Click += seleccionarTodoToolStripMenuItem_Click;
             // 
@@ -192,7 +212,7 @@
             // 
             buscarToolStripMenuItem1.Image = (Image)resources.GetObject("buscarToolStripMenuItem1.Image");
             buscarToolStripMenuItem1.Name = "buscarToolStripMenuItem1";
-            buscarToolStripMenuItem1.Size = new Size(224, 26);
+            buscarToolStripMenuItem1.Size = new Size(204, 26);
             buscarToolStripMenuItem1.Text = "Buscar";
             buscarToolStripMenuItem1.Click += buscarToolStripMenuItem1_Click;
             // 
@@ -220,11 +240,165 @@
             colorToolStripMenuItem.Text = "Color";
             colorToolStripMenuItem.Click += colorToolStripMenuItem_Click;
             // 
+            // toolStrip1
+            // 
+            toolStrip1.ImageScalingSize = new Size(20, 20);
+            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButton1, tlsbOpen, tlsbSave, tlsbSaveAs, toolStripSeparator1, tlsbAtras, tlsbRehacer, tlsbCut, tlsbCopy, tlsbPage, tlsbSub, tlsbSearch, toolStripSeparator2, tlsbFont, tlsbColor, toolStripSeparator3, tlsbExit });
+            toolStrip1.Location = new Point(0, 30);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new Size(1016, 27);
+            toolStrip1.TabIndex = 2;
+            toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
+            toolStripButton1.ImageTransparentColor = Color.Magenta;
+            toolStripButton1.Name = "toolStripButton1";
+            toolStripButton1.Size = new Size(29, 24);
+            toolStripButton1.Text = "toolStripButton1";
+            toolStripButton1.Click += toolStripButton1_Click;
+            // 
+            // tlsbOpen
+            // 
+            tlsbOpen.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tlsbOpen.Image = (Image)resources.GetObject("tlsbOpen.Image");
+            tlsbOpen.ImageTransparentColor = Color.Magenta;
+            tlsbOpen.Name = "tlsbOpen";
+            tlsbOpen.Size = new Size(29, 24);
+            tlsbOpen.Text = "tlsbOpen";
+            tlsbOpen.Click += toolStripButton2_Click;
+            // 
+            // tlsbSave
+            // 
+            tlsbSave.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tlsbSave.Image = (Image)resources.GetObject("tlsbSave.Image");
+            tlsbSave.ImageTransparentColor = Color.Magenta;
+            tlsbSave.Name = "tlsbSave";
+            tlsbSave.Size = new Size(29, 24);
+            tlsbSave.Click += tlsbSave_Click;
+            // 
+            // tlsbSaveAs
+            // 
+            tlsbSaveAs.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tlsbSaveAs.Image = (Image)resources.GetObject("tlsbSaveAs.Image");
+            tlsbSaveAs.ImageTransparentColor = Color.Magenta;
+            tlsbSaveAs.Name = "tlsbSaveAs";
+            tlsbSaveAs.Size = new Size(29, 24);
+            tlsbSaveAs.Click += tlsbSaveAs_Click;
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(6, 27);
+            // 
+            // tlsbAtras
+            // 
+            tlsbAtras.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tlsbAtras.Image = (Image)resources.GetObject("tlsbAtras.Image");
+            tlsbAtras.ImageTransparentColor = Color.Magenta;
+            tlsbAtras.Name = "tlsbAtras";
+            tlsbAtras.Size = new Size(29, 24);
+            tlsbAtras.Click += toolStripButton5_Click;
+            // 
+            // tlsbRehacer
+            // 
+            tlsbRehacer.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tlsbRehacer.Image = (Image)resources.GetObject("tlsbRehacer.Image");
+            tlsbRehacer.ImageTransparentColor = Color.Magenta;
+            tlsbRehacer.Name = "tlsbRehacer";
+            tlsbRehacer.Size = new Size(29, 24);
+            tlsbRehacer.Click += tlsbRehacer_Click;
+            // 
+            // tlsbCut
+            // 
+            tlsbCut.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tlsbCut.Image = (Image)resources.GetObject("tlsbCut.Image");
+            tlsbCut.ImageTransparentColor = Color.Magenta;
+            tlsbCut.Name = "tlsbCut";
+            tlsbCut.Size = new Size(29, 24);
+            tlsbCut.Click += tlsbCut_Click;
+            // 
+            // tlsbCopy
+            // 
+            tlsbCopy.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tlsbCopy.Image = (Image)resources.GetObject("tlsbCopy.Image");
+            tlsbCopy.ImageTransparentColor = Color.Magenta;
+            tlsbCopy.Name = "tlsbCopy";
+            tlsbCopy.Size = new Size(29, 24);
+            tlsbCopy.Click += tlsbCopy_Click;
+            // 
+            // tlsbPage
+            // 
+            tlsbPage.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tlsbPage.Image = (Image)resources.GetObject("tlsbPage.Image");
+            tlsbPage.ImageTransparentColor = Color.Magenta;
+            tlsbPage.Name = "tlsbPage";
+            tlsbPage.Size = new Size(29, 24);
+            tlsbPage.Click += tlsbPage_Click;
+            // 
+            // tlsbSub
+            // 
+            tlsbSub.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tlsbSub.Image = (Image)resources.GetObject("tlsbSub.Image");
+            tlsbSub.ImageTransparentColor = Color.Magenta;
+            tlsbSub.Name = "tlsbSub";
+            tlsbSub.Size = new Size(29, 24);
+            tlsbSub.Click += tlsbSub_Click;
+            // 
+            // tlsbSearch
+            // 
+            tlsbSearch.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tlsbSearch.Image = (Image)resources.GetObject("tlsbSearch.Image");
+            tlsbSearch.ImageTransparentColor = Color.Magenta;
+            tlsbSearch.Name = "tlsbSearch";
+            tlsbSearch.Size = new Size(29, 24);
+            tlsbSearch.Click += tlsbSearch_Click;
+            // 
+            // toolStripSeparator2
+            // 
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(6, 27);
+            // 
+            // tlsbFont
+            // 
+            tlsbFont.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tlsbFont.Image = (Image)resources.GetObject("tlsbFont.Image");
+            tlsbFont.ImageTransparentColor = Color.Magenta;
+            tlsbFont.Name = "tlsbFont";
+            tlsbFont.Size = new Size(29, 24);
+            tlsbFont.Click += tlsbFont_Click;
+            // 
+            // tlsbColor
+            // 
+            tlsbColor.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tlsbColor.Image = (Image)resources.GetObject("tlsbColor.Image");
+            tlsbColor.ImageTransparentColor = Color.Magenta;
+            tlsbColor.Name = "tlsbColor";
+            tlsbColor.Size = new Size(29, 24);
+            tlsbColor.Click += tlsbColor_Click;
+            // 
+            // toolStripSeparator3
+            // 
+            toolStripSeparator3.Name = "toolStripSeparator3";
+            toolStripSeparator3.Size = new Size(6, 27);
+            // 
+            // tlsbExit
+            // 
+            tlsbExit.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tlsbExit.Image = (Image)resources.GetObject("tlsbExit.Image");
+            tlsbExit.ImageTransparentColor = Color.Magenta;
+            tlsbExit.Name = "tlsbExit";
+            tlsbExit.Size = new Size(29, 24);
+            tlsbExit.Click += tlsbExit_Click;
+            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(1016, 571);
+            Controls.Add(toolStrip1);
             Controls.Add(richTextBox1);
             Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -236,6 +410,8 @@
             Load += Form1_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -263,5 +439,23 @@
         private ToolStripMenuItem fuenteToolStripMenuItem;
         private ToolStripMenuItem colorToolStripMenuItem;
         private ToolStripMenuItem buscarToolStripMenuItem1;
+        private ToolStrip toolStrip1;
+        private ToolStripButton toolStripButton1;
+        private ToolStripButton tlsbOpen;
+        private ToolStripButton tlsbSave;
+        private ToolStripButton tlsbSaveAs;
+        private ToolStripButton tlsbAtras;
+        private ToolStripButton tlsbRehacer;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripButton tlsbCut;
+        private ToolStripButton tlsbCopy;
+        private ToolStripButton tlsbPage;
+        private ToolStripButton tlsbSub;
+        private ToolStripButton tlsbSearch;
+        private ToolStripSeparator toolStripSeparator2;
+        private ToolStripButton tlsbFont;
+        private ToolStripButton tlsbColor;
+        private ToolStripSeparator toolStripSeparator3;
+        private ToolStripButton tlsbExit;
     }
 }

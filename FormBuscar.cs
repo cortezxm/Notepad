@@ -14,12 +14,12 @@ namespace Notepad
     {
         private RichTextBox refRichTextBox;
         private int currentStartIndex = 0;
-   
+
         public FormBuscar(RichTextBox rtb)
         {
             InitializeComponent();
             this.refRichTextBox = rtb;
-           
+
         }
 
         private void button1_Click(object sender, EventArgs e)
