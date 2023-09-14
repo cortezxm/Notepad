@@ -58,9 +58,9 @@
             // btnAnt
             // 
             btnAnt.Image = (Image)resources.GetObject("btnAnt.Image");
-            btnAnt.Location = new Point(529, 30);
+            btnAnt.Location = new Point(526, 36);
             btnAnt.Name = "btnAnt";
-            btnAnt.Size = new Size(35, 28);
+            btnAnt.Size = new Size(35, 22);
             btnAnt.SizeMode = PictureBoxSizeMode.StretchImage;
             btnAnt.TabIndex = 6;
             btnAnt.TabStop = false;
@@ -69,9 +69,9 @@
             // btnSig
             // 
             btnSig.Image = (Image)resources.GetObject("btnSig.Image");
-            btnSig.Location = new Point(569, 31);
+            btnSig.Location = new Point(567, 35);
             btnSig.Name = "btnSig";
-            btnSig.Size = new Size(35, 28);
+            btnSig.Size = new Size(35, 24);
             btnSig.SizeMode = PictureBoxSizeMode.StretchImage;
             btnSig.TabIndex = 7;
             btnSig.TabStop = false;
